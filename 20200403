@@ -1,0 +1,4 @@
+1、设置调试-->环境
+例子：PATH=..\..\opencv\x64\vc14\bin;%PATH%
+修改为：
+PATH=F:\VSPRO\FFMPEG_TEST\FFMPEG_TEST\ffmpeg;%PATH%

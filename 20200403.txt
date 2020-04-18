@@ -1,0 +1,129 @@
+1、设置调试-->环境
+例子：PATH=..\..\opencv\x64\vc14\bin;%PATH%
+修改为：
+PATH=F:\VSPRO\FFMPEG_TEST\FFMPEG_TEST\ffmpeg;F:\VSPRO\FFMPEG_TEST\FFMPEG_TEST\sdl;%PATH%
+PATH=F:\VSPRO\MFCTest\ffmpeg;F:\VSPRO\MFCTest\sdl;%PATH%
+
+PATH=F:\VSPRO\ffmepegAudio;%PATH%
+
+avcodec.lib
+avformat.lib
+avutil.lib
+avdevice.lib
+avfilter.lib
+postproc.lib
+swresample.lib
+swscale.lib
+SDL2.lib
+SDL2main.lib
+
+2、配置ubuntu【linux】
+https://jingyan.baidu.com/album/63f23628664adc0209ab3d4c.html?picindex=14
+
+3、练习题目
+* ffmpeg 基础代码转为 c++ 类形式
+* 该类名为 FfmpegPlayer
+* 具有如下功能（函数）：
+* init() 初始化
+* openVideo() 打开视频
+* getFormatInfo() 获取封装格式
+* getStream()码流个数
+* getVideoStreamIndex()获取视频流索引信息
+* decodeToYUV() 解视频码流存储到文件中
+* releaseFFmpeg() 销毁类实例，释放资源，关闭文件。
+
+4.SDL
+*init(),与ffmpeg合并；
+*createWindow()创建窗口；
+*sdlrenderer()渲染窗口
+*sldTexture()图像纹理
+*decodeToscreen()解码到屏幕
+*releaseSdl()释放SDL 
+
+
+
+5、视音频同步
+* 开启三个线程：
+  quene的用法参考这个https://www.cnblogs.com/hdk1993/p/5809180.html
+  线程1 不断得解码出视频和音频的packet到将解析出来的packet先判断是音频流还是视频流，先暂存到C++的 AudioQuene和VideoQuene。
+  线程2 从 AudioQuene里先取首元素AudioQuene.front(), 然后解析播放音频；再把 AudioQuene.pop()掉。
+  线程3 从 VideoQuene里先取首元素VideoQuene.front(), 然后解析播放视频，延时；再把 VideoQuene.pop()掉。
+* 音视频同步，获取packet的pts，进行延时时间的调节。
+
+6、git使用
+* 登录 github
+* 将现在的VS工程代码 同步到 github上
+* git clone 使用
+* git pull 使用
+* git commit 使用
+* git status 使用
+* git push 使用
+* VS中进行版本控制
+* 在Linux中拷贝git
+  在linux中输入 git clone https://github.com/maochaojie/testTorch.git
+ * 在linux用
+   *git add [文件名] 放入git的跟踪列表里（必须在所在文件夹里面用这个命令）
+   *git status 查看当前被跟踪的文件是否发生改变
+   *git commit提交
+   （git commit -m '注释'   直接注释，不需要弹出窗口进行注释）
+   *git push 推送
+   *git reset commit码 --hard   回滚到其他版本
+    如果第一个版本（一共三个版本），什么都不操作就直接提交，那这个版本以后的文件会删除掉（第二第三版本删除）；如果是进行改动，再提交，会出现一个第四个版本 
+ 
+7、linux 使用
+* 看一下这张图片的软件 C:\Users\Administrator\Desktop\笔记\ubuntu1804使用.png 打开，可以看到命令行窗口，这个是linux的terminal控制台。
+* 创建一个文件夹来存储你的所有代码资源：mkdir local_code (local_code 为文件夹名字)
+* 打开进入你刚才的文件夹位置： cd local_code
+* cd (什么都不加)进入用户目录    也可以用cd ~
+* cd /  进入系统目录
+* 安装第一个软件： sudo apt install git (sudo指的是使用管理员权限，apt-get 是软件安装器，install 是安装选项，这里是指新安装，也可以用upgrade【升级】， git为软件名字)
+* 会提示你输入密码，密码为 pyh
+* 使用git把你的代码从服务器拉到本地文件夹
+* 使用ls . 查看当前文件夹， ls .. 为上一级文件夹， ls [path] 显示路径的文件夹   
+  ls -a显示所有文件（包括隐藏文件）
+  ls |grep 文件名   在当前目录在筛选出包含此文件名的文件
+* rm [路径] 是删除该文件
+* rm -r [路径] 为递归删除文件，用于删除文件夹
+  rm -rf[路径] 强制删除，不确认
+* cp [路径] [新的路径] 为复制文件
+* cp -r [路径] [新的路径] 为复制文件夹
+* mv [路径] [新的路径] 
+* vim [文件名] 查看文件
+* vim打开文件后，在文件中操作
+  1.：i  输入
+  2.按ESC退出
+  3.：w 保存
+  4.: q 退出文件
+*软件名 -v   查看软件的版本
+*echo 打印
+ echo  kdhkh  会打印出kdhkh字符
+ echo ${PATH} 打印环境变量，$是变量申明
+
+8 VS关联git
+  * 右键项目-》将解决方案关联至远程资源库
+  * 团队协作项目-》输入git的链接-》发布
+  * 同步
+9 linux实现程序
+  1.将git里面的程序clone过来
+  2.生成CMakeLists.txt（vim 新建文件名   来生成）
+  3.用cmake生成Makefile（新建一个build文件夹用来爆粗怒Makefile等文件，因此在build里面用cmake   cmake ..）
+  4.调用make，生成了Demo（直接在Makefile所在文件夹 使用  make）
+  5.[文件路径/Demo]调用demo（./Demo）
+
+10 linux更改环境变量
+export PATH=/home/pyh/code/hello/hello2/build:${PATH}
+echo ${PATH}|grep hello
+
+11 练习: ffmpeg 保存 yuv程序移植到linux中
+* 先在VS上将主代码测试成功，然后进行下面的操作
+* 将 dll、 lib和 include替换为linux下的lib、include[linux 的已经放在了F:\VSPRO\linux_ffmpeg_lib]
+* 编写 CMakeLists.txt, 将include/lib 位置写入
+	* include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+	* link_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
+	* add_executable(demo *.cpp)
+	* target_link_libraries(demo avcodec avformat ...)
+	参考博客：https://blog.csdn.net/afei__/article/details/81201039
+* mkdir build & cd build & cmake ..
+* make
+* 执行
+ 

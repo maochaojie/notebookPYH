@@ -1,0 +1,32 @@
+1、编程知识学习
+* 电脑上 F:\\经典教材->C++->Primer+第四版+中文版.pdf（第三章、第九章、第十五章）
+* 初学宇宙第一语言 python： https://www.runoob.com/python3/python3-tutorial.html
+
+2、编程练习
+* MFCTest 熟悉现有源码结构。
+* MFCTest 新增一个 文本显示区域 将FormatCtx有关视频元数据的信息显示出来。
+* TestClass 编程小练习：（用vector做，做完以后网站上提交） https://leetcode-cn.com/problems/two-sum/
+不能建立引用的数组。
+
+（1）如：char c[6]="hello";
+char &rc=c;//错误
+因为数组名是数组首元素的地址，本身不是一个占有存储空间的变量。
+（2）
+在main函数中调用swap函数时实参不必再变量名前加&以表示地址，系统传递的是
+实参的地址不是实参的值。
+
+
+
+* python练习 在pycharm上写第一个python程序： hello world
+
+
+3、视频编解码相关
+* TI、SI 衡量指标的概念、原理：https://blog.csdn.net/leixiaohua1020/article/details/84440796
+* 视频主观质量评价方法，概念、原理：https://blog.csdn.net/leixiaohua1020/article/details/84480076
+* 全参考客观视频质量评价方法 （MSE， PSNR，SSIM）原理：https://blog.csdn.net/leixiaohua1020/article/details/11729289
+* 了解视频质量专家组：https://blog.csdn.net/leixiaohua1020/article/details/11729745
+* 视频质量评测工具了解：https://blog.csdn.net/leixiaohua1020/article/details/11729223
+* 实验数据至少下载一个数据集：https://blog.csdn.net/leixiaohua1020/article/details/11694369
+
+4、git
+* duanmurs@163.com Mm891101
