@@ -60,5 +60,8 @@ public:
 6、文本级别和服务器通过github通信，大文件通过fileZila通信
 * https://github.com/maochaojie/notebookPYH
 
+7、oss存储 accessKey：LTAI4G1EbNv413LvFk5wSCRG
+accessSecret：YjuwAHYGmfYzw96hCdpJM4lNOBreRG
+
 7、以图像超分辨率识别的project来进入人工智能方向的学习：
 * git clone https://github.com/XuecaiHu/Meta-SR-Pytorch.git
