@@ -54,3 +54,11 @@ public:
 * 视频编解码能干啥？
 
 4、浙大内网连接  sudo zjunet VPN -c  https://github.com/QSCTech/zjunet
+
+5、数据放在 work里，不要放在桌面上
+
+6、文本级别和服务器通过github通信，大文件通过fileZila通信
+* https://github.com/maochaojie/notebookPYH
+
+7、以图像超分辨率识别的project来进入人工智能方向的学习：
+* git clone https://github.com/XuecaiHu/Meta-SR-Pytorch.git
